@@ -47,3 +47,71 @@ git clone https://github.com/neuscib/data-analytics-power-bi-report580.git
 ### 4. Results
 
 All data was successfully imported and transformed as per the project requirements. The tables are now ready to be used for creating visualizations and analysis in Power BI.
+
+
+# Milestone 3: Create a Data Model
+
+## Overview  
+In this milestone, we created a structured data model in Power BI, including a DataTable, key relationships, measures, and hierarchies. We also documented our progress and uploaded the latest version of the Power BI file.
+
+
+## Data Table Creation  
+We generated a **DataTable** using DAX, ensuring it contains essential time-based fields.  
+
+```DAX
+DataTable = 
+VAR MinDate = DATE(YEAR(MIN(Orders[Order Date])), 1, 1)
+VAR MaxDate = DATE(YEAR(MAX(Orders[Shipping Date])), 12, 31)
+
+RETURN 
+ADDCOLUMNS(
+    CALENDAR(MinDate, MaxDate), 
+    "Year", YEAR([Date]),
+    "Quarter", "Q" & FORMAT([Date], "Q"),
+    "Month Name", FORMAT([Date], "MMMM"),
+    "Start of Year", DATE(YEAR([Date]), 1, 1),
+    "Start of Quarter", DATE(YEAR([Date]), (QUOTIENT(MONTH([Date])-1, 3)*3) + 1, 1),
+    "Start of Month", DATE(YEAR([Date]), MONTH([Date]), 1),
+    "Start of Week", [Date] - WEEKDAY([Date], 2) + 1
+)
+```
+
+
+## Data Model Relationships  
+We created a **star schema** by defining **one-to-many** relationships with a single filter direction from the dimension tables to the fact table.  
+
+| **Dimension Table** | **Fact Table** | **Relationship** |
+|--------------------|--------------|------------------|
+| `Products[product_code]`  | `Orders[product_code]`  | One-to-Many |
+| `Stores[store_code]`  | `Orders[Store Code]`  | One-to-Many |
+| `Customers[User UUID]`  | `Orders[User ID]`  | One-to-Many |
+| `DataTable[date]`  | `Orders[Order Date]`  | One-to-Many (Active) |
+| `DataTable[date]`  | `Orders[Shipping Date]`  | One-to-Many (Inactive) |
+
+
+
+## Measure Creation  
+We created several key measures in a separate **Measure's Table**:
+
+- **Total Orders**: Counts the number of orders.  
+- **Total Revenue**: `SUMX(Orders, Orders[Product Quantity] * Products[Sale_Price])`  
+- **Total Profit**: `(Products[Sale_Price] - Products[Cost_Price]) * Orders[Product Quantity]`  
+- **Total Customers**: `DISTINCTCOUNT(Orders[User ID])`  
+- **Total Quantity**: `SUM(Orders[Product Quantity])`  
+- **Profit YTD**: `TOTALYTD([Total Profit], DataTable[date])`  
+- **Revenue YTD**: `TOTALYTD([Total Revenue], DataTable[date])`  
+
+## Hierarchy Creation  
+We created two hierarchies:
+
+### **Date Hierarchy**  
+- Start of Year  (Year)
+- Start of Quarter  (Quarter)
+- Start of Month  (Month)
+- Start of Week  (Day)
+
+
+### **Geography Hierarchy**  
+- Region (Region)
+- Country Region (Country Region)
+- Country (Country)
