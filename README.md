@@ -118,28 +118,21 @@ We created two hierarchies:
 
 ## Milestone 4: Set Up the Report
 
-### 1. Report Pages Creation
+### Report Pages Creation
 
 In this milestone, we established the basic structure of the Power BI report by creating the necessary pages and setting up navigation. The following pages were created:
-
 - Executive Summary
-
 - Customer Detail
-
 - Product Detail
-
 - Stores Map
-
 Each page serves a distinct purpose for data visualization and analysis.
 
-### 2. Selecting a Color Theme
+### Selecting a Color Theme
 
 A predefined color theme was selected in Power BI from the View tab to ensure consistency in the report's appearance.
 
-### 3. Adding a Navigation Sidebar
+### Adding a Navigation Sidebar
 
 A rectangle was added on the left side of the Executive Summary page to act as a navigation sidebar.
-
 The fill color was set to contrast with the report background.
-
 This sidebar was duplicated across the other report pages (Customer Detail, Product Detail, and Stores Map) for a uniform design and ease of navigation.
