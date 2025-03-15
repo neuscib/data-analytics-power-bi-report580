@@ -49,13 +49,13 @@ git clone https://github.com/neuscib/data-analytics-power-bi-report580.git
 All data was successfully imported and transformed as per the project requirements. The tables are now ready to be used for creating visualizations and analysis in Power BI.
 
 
-# Milestone 3: Create a Data Model
+## Milestone 3: Create a Data Model
 
-## Overview  
+### Overview  
 In this milestone, we created a structured data model in Power BI, including a DataTable, key relationships, measures, and hierarchies. We also documented our progress and uploaded the latest version of the Power BI file.
 
 
-## Data Table Creation  
+### Data Table Creation  
 We generated a **DataTable** using DAX, ensuring it contains essential time-based fields.  
 
 ```DAX
@@ -77,7 +77,7 @@ ADDCOLUMNS(
 ```
 
 
-## Data Model Relationships  
+### Data Model Relationships  
 We created a **star schema** by defining **one-to-many** relationships with a single filter direction from the dimension tables to the fact table.  
 
 | **Dimension Table** | **Fact Table** | **Relationship** |
@@ -90,7 +90,7 @@ We created a **star schema** by defining **one-to-many** relationships with a si
 
 
 
-## Measure Creation  
+### Measure Creation  
 We created several key measures in a separate **Measure's Table**:
 
 - **Total Orders**: Counts the number of orders.  
@@ -101,17 +101,45 @@ We created several key measures in a separate **Measure's Table**:
 - **Profit YTD**: `TOTALYTD([Total Profit], DataTable[date])`  
 - **Revenue YTD**: `TOTALYTD([Total Revenue], DataTable[date])`  
 
-## Hierarchy Creation  
+### Hierarchy Creation  
 We created two hierarchies:
 
-### **Date Hierarchy**  
+#### **Date Hierarchy**  
 - Start of Year  (Year)
 - Start of Quarter  (Quarter)
 - Start of Month  (Month)
 - Start of Week  (Day)
 
 
-### **Geography Hierarchy**  
+#### **Geography Hierarchy**  
 - Region (Region)
 - Country Region (Country Region)
 - Country (Country)
+
+## Milestone 4: Set Up the Report
+
+### 1. Report Pages Creation
+
+In this milestone, we established the basic structure of the Power BI report by creating the necessary pages and setting up navigation. The following pages were created:
+
+- Executive Summary
+
+- Customer Detail
+
+- Product Detail
+
+- Stores Map
+
+Each page serves a distinct purpose for data visualization and analysis.
+
+### 2. Selecting a Color Theme
+
+A predefined color theme was selected in Power BI from the View tab to ensure consistency in the report's appearance.
+
+### 3. Adding a Navigation Sidebar
+
+A rectangle was added on the left side of the Executive Summary page to act as a navigation sidebar.
+
+The fill color was set to contrast with the report background.
+
+This sidebar was duplicated across the other report pages (Customer Detail, Product Detail, and Stores Map) for a uniform design and ease of navigation.
