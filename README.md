@@ -125,6 +125,7 @@ In this milestone, we established the basic structure of the Power BI report by 
 - Customer Detail
 - Product Detail
 - Stores Map
+  
 Each page serves a distinct purpose for data visualization and analysis.
 
 ### Selecting a Color Theme
