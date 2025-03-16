@@ -137,3 +137,33 @@ A predefined color theme was selected in Power BI from the View tab to ensure co
 A rectangle was added on the left side of the Executive Summary page to act as a navigation sidebar.
 The fill color was set to contrast with the report background.
 This sidebar was duplicated across the other report pages (Customer Detail, Product Detail, and Stores Map) for a uniform design and ease of navigation.
+
+
+## Milestone 5: Build the Customer Detail Page
+
+### 1. Overview
+The goal of this milestone was to build the **Customer Detail** page to provide insights into top customers by focusing on metrics like revenue, number of orders, and trends. This page allows users to drill down into specific customers for a detailed analysis.
+
+### 2. Visuals Created
+The **Customer Detail** page contains the following visuals:
+- **Card Visuals**: 
+  - Top Customer’s **Name**.
+  - **Total Revenue** of the top customer.
+  - **Total Orders** made by the top customer.
+- **Customer Table**: Displays all customers with their **full name**, **total revenue**, and **number of orders**.
+- **Bar Chart**: Shows which products were bought most frequently by the top customer.
+- **Line Chart**: Displays the **purchasing trends over time** for the top customer.
+
+### 3. Measures and Calculations
+- Created new measures for:
+  - **Total Revenue**: Total revenue for the top customer.
+  - **Total Orders**: Total number of orders for the top customer.
+  - **Average Revenue per Order**: The average revenue per order for the top customer.
+- **Drill-through**: Set up a drill-through feature to allow users to right-click on a customer and see detailed insights.
+
+### 4. Customization and Styling
+- Styled the page with a **consistent color theme** to ensure a professional appearance.
+- Duplicated the **navigation sidebar** from the **Executive Summary** page to maintain uniformity across all report pages.
+
+### 5. Results
+The **Customer Detail** page provides a comprehensive overview of the top customers, including detailed insights into their revenue trends, product preferences, and purchasing behavior. The drill-through feature enhances user interaction and allows deeper analysis of specific customer data.
