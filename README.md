@@ -167,3 +167,52 @@ The **Customer Detail** page contains the following visuals:
 
 ### 5. Results
 The **Customer Detail** page provides a comprehensive overview of the top customers, including detailed insights into their revenue trends, product preferences, and purchasing behavior. The drill-through feature enhances user interaction and allows deeper analysis of specific customer data.
+
+
+## Milestone 6: Added Visuals and Configurations
+
+In this stage of the project, several enhancements were made to the **Executive Summary** page, including new key visualizations and KPIs for better quarterly performance analysis.  
+
+### Visuals Created on This Page:
+
+1. **Key Metric Cards**  
+   - **Three cards** were copied and configured to display:  
+     - **Total Revenue**  
+     - **Total Orders**  
+     - **Total Profit**  
+   - Formatting adjustments were made in **Format > Callout Value**:  
+     - Revenue and Profit: **2 decimal places**  
+     - Orders: **1 decimal place**  
+
+2. **Revenue Line Chart by Date**  
+   - The line chart from **Customer Detail** was copied and adjusted with:  
+     - **X-Axis:** `DateTable[Date]` with **Start of Year, Start of Quarter, and Start of Month** levels.  
+     - **Y-Axis:** `Total Revenue`.  
+   - Positioned directly below the cards.  
+
+3. **Donut Charts for Revenue Breakdown**  
+   - **Two donut charts** were added to show `Total Revenue` breakdown by:  
+     - **Store Country** (`Store[Country]`).  
+     - **Store Type** (`Store[Store Type]`).  
+   - Formatting was copied from **Customer Detail** for consistency.  
+
+4. **Bar Chart for Orders by Product Category**  
+   - The **Total Customers by Product Category** donut chart was copied.  
+   - Changed the visual type to **Clustered Bar Chart**.  
+   - Replaced the **X-axis** field from `Total Customers` to `Total Orders`.  
+   - Adjusted colors to match the dashboard theme.  
+
+5. **Quarterly KPIs for Revenue, Orders, and Profit**  
+   - **New DAX measures** were created to calculate values from the previous quarter and set a 5% growth target:  
+     - **Previous Quarter Profit, Revenue, and Orders**.  
+     - **Target Profit, Revenue, and Orders**.  
+   - **Three KPI visuals** were added to compare:  
+     - **Total Revenue vs. Target Revenue**.  
+     - **Total Profit vs. Target Profit**.  
+     - **Total Orders vs. Target Orders**.  
+   - Formatting configuration:  
+     - **Trend Axis:** `DateTable[Date]`.  
+     - **Bad Colour:** Red with **15% transparency**.  
+     - **Callout Value:** 1 decimal place.  
+   - Positioned directly below the revenue line chart.  
+
