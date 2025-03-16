@@ -169,7 +169,7 @@ The **Customer Detail** page contains the following visuals:
 The **Customer Detail** page provides a comprehensive overview of the top customers, including detailed insights into their revenue trends, product preferences, and purchasing behavior. The drill-through feature enhances user interaction and allows deeper analysis of specific customer data.
 
 
-## Milestone 6: Added Visuals and Configurations
+## Milestone 6: Create an Executive Summary Page
 
 In this stage of the project, several enhancements were made to the **Executive Summary** page, including new key visualizations and KPIs for better quarterly performance analysis.  
 
