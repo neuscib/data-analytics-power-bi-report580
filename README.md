@@ -49,13 +49,13 @@ git clone https://github.com/neuscib/data-analytics-power-bi-report580.git
 All data was successfully imported and transformed as per the project requirements. The tables are now ready to be used for creating visualizations and analysis in Power BI.
 
 
-# Milestone 3: Create a Data Model
+## Milestone 3: Create a Data Model
 
-## Overview  
+### Overview  
 In this milestone, we created a structured data model in Power BI, including a DataTable, key relationships, measures, and hierarchies. We also documented our progress and uploaded the latest version of the Power BI file.
 
 
-## Data Table Creation  
+### Data Table Creation  
 We generated a **DataTable** using DAX, ensuring it contains essential time-based fields.  
 
 ```DAX
@@ -77,7 +77,7 @@ ADDCOLUMNS(
 ```
 
 
-## Data Model Relationships  
+### Data Model Relationships  
 We created a **star schema** by defining **one-to-many** relationships with a single filter direction from the dimension tables to the fact table.  
 
 | **Dimension Table** | **Fact Table** | **Relationship** |
@@ -90,7 +90,7 @@ We created a **star schema** by defining **one-to-many** relationships with a si
 
 
 
-## Measure Creation  
+### Measure Creation  
 We created several key measures in a separate **Measure's Table**:
 
 - **Total Orders**: Counts the number of orders.  
@@ -101,17 +101,69 @@ We created several key measures in a separate **Measure's Table**:
 - **Profit YTD**: `TOTALYTD([Total Profit], DataTable[date])`  
 - **Revenue YTD**: `TOTALYTD([Total Revenue], DataTable[date])`  
 
-## Hierarchy Creation  
+### Hierarchy Creation  
 We created two hierarchies:
 
-### **Date Hierarchy**  
+#### **Date Hierarchy**  
 - Start of Year  (Year)
 - Start of Quarter  (Quarter)
 - Start of Month  (Month)
 - Start of Week  (Day)
 
 
-### **Geography Hierarchy**  
+#### **Geography Hierarchy**  
 - Region (Region)
 - Country Region (Country Region)
 - Country (Country)
+
+## Milestone 4: Set Up the Report
+
+### Report Pages Creation
+
+In this milestone, we established the basic structure of the Power BI report by creating the necessary pages and setting up navigation. The following pages were created:
+- Executive Summary
+- Customer Detail
+- Product Detail
+- Stores Map
+  
+Each page serves a distinct purpose for data visualization and analysis.
+
+### Selecting a Color Theme
+
+A predefined color theme was selected in Power BI from the View tab to ensure consistency in the report's appearance.
+
+### Adding a Navigation Sidebar
+
+A rectangle was added on the left side of the Executive Summary page to act as a navigation sidebar.
+The fill color was set to contrast with the report background.
+This sidebar was duplicated across the other report pages (Customer Detail, Product Detail, and Stores Map) for a uniform design and ease of navigation.
+
+
+## Milestone 5: Build the Customer Detail Page
+
+### 1. Overview
+The goal of this milestone was to build the **Customer Detail** page to provide insights into top customers by focusing on metrics like revenue, number of orders, and trends. This page allows users to drill down into specific customers for a detailed analysis.
+
+### 2. Visuals Created
+The **Customer Detail** page contains the following visuals:
+- **Card Visuals**: 
+  - Top Customer’s **Name**.
+  - **Total Revenue** of the top customer.
+  - **Total Orders** made by the top customer.
+- **Customer Table**: Displays all customers with their **full name**, **total revenue**, and **number of orders**.
+- **Bar Chart**: Shows which products were bought most frequently by the top customer.
+- **Line Chart**: Displays the **purchasing trends over time** for the top customer.
+
+### 3. Measures and Calculations
+- Created new measures for:
+  - **Total Revenue**: Total revenue for the top customer.
+  - **Total Orders**: Total number of orders for the top customer.
+  - **Average Revenue per Order**: The average revenue per order for the top customer.
+- **Drill-through**: Set up a drill-through feature to allow users to right-click on a customer and see detailed insights.
+
+### 4. Customization and Styling
+- Styled the page with a **consistent color theme** to ensure a professional appearance.
+- Duplicated the **navigation sidebar** from the **Executive Summary** page to maintain uniformity across all report pages.
+
+### 5. Results
+The **Customer Detail** page provides a comprehensive overview of the top customers, including detailed insights into their revenue trends, product preferences, and purchasing behavior. The drill-through feature enhances user interaction and allows deeper analysis of specific customer data.
