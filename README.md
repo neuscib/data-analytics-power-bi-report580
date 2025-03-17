@@ -216,3 +216,68 @@ In this stage of the project, several enhancements were made to the **Executive 
      - **Callout Value:** 1 decimal place.  
    - Positioned directly below the revenue line chart.  
 
+## Milestone 7 - Create a Product Detail Page
+
+This document outlines the progress made in **Milestone 7**, including the implementation of new visualizations and data segmentation in Power BI.
+
+---
+
+### **Performance Gauges**
+- Added three gauges to visualize the current quarter's performance for:
+  - **Orders**
+  - **Revenue**
+  - **Profit**
+- Defined DAX measures to calculate:
+  - The current values of each metric.
+  - Quarterly targets with a 10% growth rate.
+  - The gap between actual performance and the target.
+- Applied conditional formatting to gauge values:
+  - **Red** if the target is not met.
+  - **Black** if the target is achieved.
+- Arranged the gauges at the top of the report, leaving space for slicers.
+
+### **Filter State Placeholder**
+- Added two rectangular shapes to the left of the gauges to display selected filter values.
+- Defined two DAX measures:
+  - **Category Selection**: Shows the selected product category or "No Selection" if no filter is applied.
+  - **Country Selection**: Displays the selected country or "No Selection" if no filter is applied.
+- Added two card visuals inside the rectangles to display these measures.
+
+### **Area Chart - Revenue by Category Over Time**
+- Added an area chart to visualize product category performance over time.
+- Configuration:
+  - **X-Axis**: Dates (Start of Quarter)
+  - **Y-Axis**: Total Revenue
+  - **Legend**: Product Category
+- Positioned on the left side of the page, aligned with the second gauge visual.
+
+### **Top 10 Products Table**
+- Added a table displaying the **Top 10 Products** with the following fields:
+  - **Product Description**
+  - **Total Revenue**
+  - **Total Customers**
+  - **Total Orders**
+  - **Profit per Order**
+- Used the existing customer table formatting for consistency.
+
+### **Scatter Plot - Profitability vs. Quantity Sold**
+- Created a new calculated column in DAX **[Profit per Item]** in the Products table.
+- Added a scatter chart configured with:
+  - **Values**: Product Description
+  - **X-Axis**: Profit per Item
+  - **Y-Axis**: Total Quantity Sold
+  - **Legend**: Product Category
+
+### **Collapsible Slicer Toolbar**
+- Implemented a sidebar for filters using **bookmarks and buttons**:
+  - **Open Button**: Added a filter icon button in the navigation bar.
+  - **Sliding Panel**: Added a rectangular shape matching the navigation bar color.
+  - **Slicers Added**:
+    - **Product Category** (vertical list, allows multiple selection).
+    - **Country** (includes "Select All" option).
+  - **Close Button**: Positioned at the top-right corner of the panel to hide it.
+- Created two bookmarks in the **Bookmarks Pane**:
+  - **Slicer Bar Open** (toolbar visible)
+  - **Slicer Bar Closed** (toolbar hidden)
+- Configured button actions to toggle between these bookmarks without affecting filter selections.
+
