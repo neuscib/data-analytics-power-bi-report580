@@ -220,8 +220,6 @@ In this stage of the project, several enhancements were made to the **Executive 
 
 This document outlines the progress made in **Milestone 7**, including the implementation of new visualizations and data segmentation in Power BI.
 
----
-
 ### **Performance Gauges**
 - Added three gauges to visualize the current quarter's performance for:
   - **Orders**
