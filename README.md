@@ -283,7 +283,6 @@ This document outlines the progress made in **Milestone 7**, including the imple
 
 ### Overview
 In this milestone, I have created the **Stores Map Page** in Power BI. This page includes a **map visualization** that shows store locations, and it allows users to easily analyze the **year-to-date profit performance** by region. The page also features interactive components like a **country slicer**, a **drillthrough page** for more detailed store performance analysis, and a **tooltip page** to provide a quick glance at a store's YTD profit against the target.
-
 The goal of this milestone was to create an intuitive and interactive map that would help users explore store data, identify trends, and easily drill down into store-specific performance metrics.
 
 
@@ -304,6 +303,7 @@ The core component of the Stores Map Page is the **map visualization**. The map 
 
 The map allows users to visually compare the performance of stores across different geographical regions, making it easy to identify top-performing stores and areas that may need attention.
 
+
 #### 2. **Country Slicer**
 A **country slicer** was added above the map to give users the ability to filter stores by country. This helps users focus on specific regions or countries for analysis.
 
@@ -315,6 +315,7 @@ A **country slicer** was added above the map to give users the ability to filter
   - **Show "Select All"** option, so users can quickly select all countries if needed.
 
 The slicer provides an interactive way to filter the map and analyze store performance by region.
+
 
 #### 3. **Drillthrough Page**
 A **drillthrough page** was created to provide users with more detailed performance data for a selected store. By right-clicking on any store bubble on the map, users can access a page that shows comprehensive performance metrics, including product information and profit data.
@@ -334,6 +335,7 @@ A **drillthrough page** was created to provide users with more detailed performa
 
 By using the drillthrough feature, users can access detailed insights into a specific store’s performance, helping managers make informed decisions.
 
+
 #### 4. **Tooltip Page**
 The **Tooltip Page** provides a brief overview of a store’s **Profit YTD** performance when users hover over a store’s bubble on the map. This allows for a quick glance at key performance indicators without needing to click or navigate away from the map.
 
@@ -344,6 +346,7 @@ The **Tooltip Page** provides a brief overview of a store’s **Profit YTD** per
   - The visual was configured to show only the **Profit YTD** gauge when hovering over a store location on the map.
 
 This feature enhances the interactivity of the map, allowing users to easily view store performance just by hovering over the locations on the map.
+
 
 ### Visuals Created
 
@@ -359,6 +362,7 @@ This feature enhances the interactivity of the map, allowing users to easily vie
 
 #### **Tooltip Page**
 1. **Profit YTD Gauge**: A gauge showing the store's year-to-date profit when hovering over the store on the map.
+
 
 ### Conclusion
 This milestone focused on creating a highly interactive and informative **Stores Map Page** in Power BI. The addition of slicers, drillthrough pages, and tooltips improves the user experience by making it easy to visualize and analyze store performance across different regions and product categories.
