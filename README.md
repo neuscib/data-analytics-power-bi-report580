@@ -3,11 +3,9 @@
 ## Milestone 1: Set up the Environment
 
 ### 1. Repository Setup
-
 - The project repository is available at: [Project Repository Link](https://github.com/neuscib/data-analytics-power-bi-report580)
   
 ### 2. Prerequisites
-
 Before starting with this project, make sure you have the following installed:
 
 - **Power BI**: Download and install Power BI Desktop from the [official site](https://powerbi.microsoft.com/).
@@ -15,7 +13,6 @@ Before starting with this project, make sure you have the following installed:
 - **Git**: If you haven't installed Git, you can download it from [here](https://git-scm.com/).
 
 ### 3. Clone the Repository
-
 To get started, clone the repository to your local machine:
 
 ```bash
@@ -31,7 +28,6 @@ git clone https://github.com/neuscib/data-analytics-power-bi-report580.git
 - **CSV Files**: We used the Folder connector in Power BI to import three CSV files from the `Customers` folder, each representing a different region where the company operates. Power BI automatically combined these files into a single table.
 
 ### 2. Transformations Performed
-
 - **Removing Duplicates**: In the `Products` table, we removed duplicates from the `product_code` column to ensure that each product code is unique.
 - **Creating the Full Name Column**: In the `Customers` table, we combined the `First Name` and `Last Name` columns into a new `Full Name` column for easier identification of customers.
 - **Data Cleaning**:
@@ -40,12 +36,10 @@ git clone https://github.com/neuscib/data-analytics-power-bi-report580.git
 - **Renaming Columns**: We renamed the columns to follow Power BI's naming conventions, improving clarity in the report.
 
 ### 3. Tools and Features Used
-
 - **Power Query Editor**: Most of the transformations were done in the Power Query Editor in Power BI, using functions like **Remove Duplicates**, **Replace Values**, **Add Custom Columns**, and **Rename Columns**.
 - **Power BI Connectors**: We used the **Azure SQL Database**, **Azure Blob Storage**, and **Folder** connectors to import data from different sources.
 
 ### 4. Results
-
 All data was successfully imported and transformed as per the project requirements. The tables are now ready to be used for creating visualizations and analysis in Power BI.
 
 
@@ -53,7 +47,6 @@ All data was successfully imported and transformed as per the project requiremen
 
 ### Overview  
 In this milestone, we created a structured data model in Power BI, including a DataTable, key relationships, measures, and hierarchies. We also documented our progress and uploaded the latest version of the Power BI file.
-
 
 ### Data Table Creation  
 We generated a **DataTable** using DAX, ensuring it contains essential time-based fields.  
@@ -76,7 +69,6 @@ ADDCOLUMNS(
 )
 ```
 
-
 ### Data Model Relationships  
 We created a **star schema** by defining **one-to-many** relationships with a single filter direction from the dimension tables to the fact table.  
 
@@ -87,7 +79,6 @@ We created a **star schema** by defining **one-to-many** relationships with a si
 | `Customers[User UUID]`  | `Orders[User ID]`  | One-to-Many |
 | `DataTable[date]`  | `Orders[Order Date]`  | One-to-Many (Active) |
 | `DataTable[date]`  | `Orders[Shipping Date]`  | One-to-Many (Inactive) |
-
 
 
 ### Measure Creation  
@@ -110,16 +101,15 @@ We created two hierarchies:
 - Start of Month  (Month)
 - Start of Week  (Day)
 
-
 #### **Geography Hierarchy**  
 - Region (Region)
 - Country Region (Country Region)
 - Country (Country)
 
+
 ## Milestone 4: Set Up the Report
 
 ### Report Pages Creation
-
 In this milestone, we established the basic structure of the Power BI report by creating the necessary pages and setting up navigation. The following pages were created:
 - Executive Summary
 - Customer Detail
@@ -129,11 +119,9 @@ In this milestone, we established the basic structure of the Power BI report by 
 Each page serves a distinct purpose for data visualization and analysis.
 
 ### Selecting a Color Theme
-
 A predefined color theme was selected in Power BI from the View tab to ensure consistency in the report's appearance.
 
 ### Adding a Navigation Sidebar
-
 A rectangle was added on the left side of the Executive Summary page to act as a navigation sidebar.
 The fill color was set to contrast with the report background.
 This sidebar was duplicated across the other report pages (Customer Detail, Product Detail, and Stores Map) for a uniform design and ease of navigation.
@@ -335,7 +323,6 @@ A **drillthrough page** was created to provide users with more detailed performa
 
 By using the drillthrough feature, users can access detailed insights into a specific store’s performance, helping managers make informed decisions.
 
-
 #### 4. **Tooltip Page**
 The **Tooltip Page** provides a brief overview of a store’s **Profit YTD** performance when users hover over a store’s bubble on the map. This allows for a quick glance at key performance indicators without needing to click or navigate away from the map.
 
@@ -346,7 +333,6 @@ The **Tooltip Page** provides a brief overview of a store’s **Profit YTD** per
   - The visual was configured to show only the **Profit YTD** gauge when hovering over a store location on the map.
 
 This feature enhances the interactivity of the map, allowing users to easily view store performance just by hovering over the locations on the map.
-
 
 ### Visuals Created
 
@@ -368,6 +354,69 @@ This feature enhances the interactivity of the map, allowing users to easily vie
 This milestone focused on creating a highly interactive and informative **Stores Map Page** in Power BI. The addition of slicers, drillthrough pages, and tooltips improves the user experience by making it easy to visualize and analyze store performance across different regions and product categories.
 
 By completing this milestone, I have provided a functional and user-friendly map interface that allows users to quickly assess store performance and access detailed insights.
+
+
+## Milestone 9: Cross Filtering and Navigation
+
+### Overview
+In this milestone, we implemented advanced **cross-filtering interactions** and created a **navigation sidebar** to enhance the usability and interactivity of the Power BI report. Below is a comprehensive breakdown of the tasks accomplished.
+
+
+### 1. Cross Filtering Adjustments
+We modified the interactions between visual elements to ensure that filtering behavior aligns with the report’s objectives. The following configurations were applied:
+
+#### **Executive Summary Page**
+- The **Product Category Bar Chart** and **Top 10 Products Table** were set to **not** filter the card visuals or KPIs.
+  - **Steps:**
+    1. Selected the bar chart/table.
+    2. Opened **Format** > **Edit Interactions**.
+    3. Set the interactions for the card visuals and KPIs to **None** (circle with a line through it).
+
+#### **Customer Detail Page**
+- The **Top 20 Customers Table** was set to **not** filter any other visuals.
+- The **Total Customers by Product Category Donut Chart** was set to **not** affect the Customers Line Graph.
+- The **Total Customers by Country Donut Chart** was configured to **cross-filter** the **Total Customers by Product Category Donut Chart**.
+  - **Steps:**
+    1. Selected the relevant visual.
+    2. Opened **Format** > **Edit Interactions**.
+    3. Set filtering behavior accordingly (None or Cross-filter as required).
+
+#### **Product Detail Page**
+- The **Orders vs. Profitability Scatter Graph** was set to **not** affect any other visuals.
+- The **Top 10 Products Table** was set to **not** affect any other visuals.
+  - **Steps:**
+    1. Selected the scatter graph/table.
+    2. Opened **Format** > **Edit Interactions**.
+    3. Disabled filtering for other visuals by selecting **None**.
+
+
+### 2. Navigation Sidebar Setup
+To improve user experience, we created a **navigation bar** with interactive buttons that allow users to switch between report pages seamlessly.
+
+#### **Button Creation and Icon Setup**
+- **Added four blank buttons** in the sidebar of the **Executive Summary Page**.
+- Configured **custom icons**:
+  - **Default state:** White icon.
+  - **On Hover state:** Cyan icon.
+  - Adjusted icons using the **Format** > **Button Style** > **Icon** settings.
+
+#### **Navigation Action Configuration**
+- Enabled **Action** for each button.
+- Set **Type** to **Page Navigation**.
+- Assigned the correct **Destination** for each button.
+- Grouped all buttons together and **copied them to all report pages** to maintain consistency.
+
+
+### CONCLUSION
+This milestone significantly improved the usability of the Power BI report by refining filtering interactions and implementing an intuitive navigation system. The report is now more **user-friendly**, **efficient**, and **professional**.
+
+
+
+
+
+
+
+For further improvements or enhancements, feel free to contribute or suggest changes!
 
 
 
