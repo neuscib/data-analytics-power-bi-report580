@@ -350,7 +350,7 @@ This feature enhances the interactivity of the map, allowing users to easily vie
 1. **Profit YTD Gauge**: A gauge showing the store's year-to-date profit when hovering over the store on the map.
 
 
-### Conclusion
+### Conclusions
 This milestone focused on creating a highly interactive and informative **Stores Map Page** in Power BI. The addition of slicers, drillthrough pages, and tooltips improves the user experience by making it easy to visualize and analyze store performance across different regions and product categories.
 
 By completing this milestone, I have provided a functional and user-friendly map interface that allows users to quickly assess store performance and access detailed insights.
@@ -407,7 +407,7 @@ To improve user experience, we created a **navigation bar** with interactive but
 - Grouped all buttons together and **copied them to all report pages** to maintain consistency.
 
 
-### CONCLUSION
+### Conclusions
 This milestone significantly improved the usability of the Power BI report by refining filtering interactions and implementing an intuitive navigation system. The report is now more **user-friendly**, **efficient**, and **professional**.
 
 
@@ -471,7 +471,13 @@ The SQL query to create the view and the result are attached in the files `quest
 
 The SQL query and result for this question are attached in the files `question_5.sql` and `question_5.csv`.
 
-## Conclusion
+
+### Achievements:
+- Completed final analysis and reports.
+- Optimized SQL queries for performance.
+- Created interactive dashboards for stakeholders.
+
+### Final Conclusion:
 
 This milestone marked the last task in my project with **Power BI**, and it provided valuable experience in querying databases and using SQL for data analysis. Throughout this task, I learned how to effectively connect to a PostgreSQL database, retrieve data, and create SQL queries to extract meaningful insights. I also gained a deeper understanding of how to work with different database structures and how to automate some processes to save time and reduce errors.
 
