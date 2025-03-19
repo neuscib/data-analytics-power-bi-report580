@@ -411,12 +411,72 @@ To improve user experience, we created a **navigation bar** with interactive but
 This milestone significantly improved the usability of the Power BI report by refining filtering interactions and implementing an intuitive navigation system. The report is now more **user-friendly**, **efficient**, and **professional**.
 
 
+## Milestone 10: SQL Metrics for Users Outside the Company
 
+### Overview
 
+In this milestone, the goal was to connect to a PostgreSQL database hosted on **Microsoft Azure** and use **SQL** to create metrics based on data from users outside the company. I used **SQLTools** in **VSCode** to connect to the database, run queries, and extract relevant information. This section involved tasks like exploring the database schema, running SQL queries, and documenting the results in CSV files.
 
+### Task 1: Connect to the SQL Server
 
+We connected to the PostgreSQL server using **SQLTools** in Visual Studio Code. The connection details were as follows:
 
-For further improvements or enhancements, feel free to contribute or suggest changes!
+- **HOST**: [hidden]
+- **PORT**: 5432
+- **DATABASE**: postgres
+- **USER**: [hidden]
+- **PASSWORD**: [hidden]
 
+We ensured that **SSL Encryption** was enabled in the connection settings to guarantee secure communication with the server.
 
+### Task 2: Check the Tables and Column Names
 
+The next step was to explore the structure of the database and check the tables and columns we needed for our queries. Since the table and column names were different from those we used in **Power BI**, we had to review them carefully.
+
+To achieve this:
+
+1. **Created a script called `import_columns.sql`.**
+2. **Ran this script in Visual Studio Code, which queried the database and retrieved the list of tables and columns.**
+3. **Saved the results for each table in separate CSV files.**
+
+The script ensured that all tables and columns were extracted automatically, and the corresponding CSV files were saved in the selected directory. This step was crucial to familiarize ourselves with the database structure.
+
+#### Example: Output Files
+
+- **List of Tables**: A CSV file containing the list of all tables in the database.
+- **Columns of the Orders Table**: A CSV file named `orders_columns.csv` with the list of all columns in the `orders` table.
+- **Other Tables**: For each table in the database, a CSV file was created with the name of the table containing its columns.
+
+### Task 3: Query the Database
+
+For this task, we wrote SQL queries to answer the following business questions and exported the results to CSV files. Each SQL query was saved in a `.sql` file, and the result in a `.csv` file.
+
+#### 1. How many staff are there in all UK stores?
+
+The SQL query and result for this question are attached in the files `question_1.sql` and `question_1.csv`.
+
+#### 2. Which month in 2022 had the highest revenue?
+
+The SQL query and result for this question are attached in the files `question_2.sql` and `question_2.csv`.
+
+#### 3. Which German store type had the highest revenue for 2022?
+
+The SQL query and result for this question are attached in the files `question_3.sql` and `question_3.csv`.
+
+#### 4. Create a View for Store Types and Total Sales
+
+The SQL query to create the view and the result are attached in the files `question_4.sql` and `question_4.csv`.
+
+#### 5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
+The SQL query and result for this question are attached in the files `question_5.sql` and `question_5.csv`.
+
+## Conclusion
+
+This milestone marked the last task in my project with **Power BI**, and it provided valuable experience in querying databases and using SQL for data analysis. Throughout this task, I learned how to effectively connect to a PostgreSQL database, retrieve data, and create SQL queries to extract meaningful insights. I also gained a deeper understanding of how to work with different database structures and how to automate some processes to save time and reduce errors.
+
+I was able to generate and save multiple CSV files containing the results of the SQL queries, which were uploaded to my GitHub repository along with the corresponding SQL queries. This process not only improved my SQL skills but also provided me with hands-on experience in handling data extraction and database interaction in a real-world scenario.
+
+As I complete this project, I feel more confident in my ability to use SQL for data analysis and to create actionable insights from large datasets. I look forward to continuing to develop these skills in future projects.
+
+If you have any suggestions or feedback, they are always welcome as I continue to improve my skills and knowledge in data analysis and SQL.
